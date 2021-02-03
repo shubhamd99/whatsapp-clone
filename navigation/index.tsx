@@ -31,6 +31,8 @@ function RootNavigator() {
 		<Stack.Navigator screenOptions={{
 			headerStyle: {
 				backgroundColor: Colors.light.tint,
+				shadowOpacity: 0, // Fix white line for IOS
+				elevation: 0, // Fix white line for Android
 			},
 			headerTintColor: Colors.light.background,
 			headerTitleAlign: "left",
