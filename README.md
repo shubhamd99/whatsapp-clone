@@ -1,4 +1,4 @@
-### Whatsapp Clone With React Native
+### Whatsapp Clone UI With React Native
 
 ![image](https://i.imgur.com/ZfMooxy.png)
 
