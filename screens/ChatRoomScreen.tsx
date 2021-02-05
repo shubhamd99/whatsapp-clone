@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, ImageBackground, StyleSheet } from "react-native";
 
-// import { useRoute } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 import ChatRoomData from "../data/Chats";
 import ChatMessage from "../components/ChatMessage";
 import InputBox from "../components/InputBox";
@@ -9,14 +9,14 @@ import InputBox from "../components/InputBox";
 const BG = require("../assets/images/BG.png");
 
 const ChatRoomScreen = () => {
-	// const route = useRoute();
-	// console.log("route", route.params);
+	const route: any = useRoute();
+	const userName = route.params ? route.params.name : "";
 
 	return (
 		<ImageBackground  style={styles.backgroundImage} source={BG}>
 			<FlatList
 				data={ChatRoomData.messages}
-				renderItem={({ item }) => <ChatMessage message={item} />}
+				renderItem={({ item }) => <ChatMessage message={item} userName={userName} />}
 				inverted // for reversing the array
 			/>
 			<InputBox />

@@ -7,6 +7,7 @@ import Colors from "../../constants/Colors";
 
 export type ChatMessageProps = {
     message: Message;
+    userName: string;
 }
 
 const ChatMessage = (props: ChatMessageProps) => {
@@ -25,7 +26,7 @@ const ChatMessage = (props: ChatMessageProps) => {
                         // marginRight: isMyMessage ? 0 : 50,
                     }
                 ]}>
-                {!isMyMessage && <Text style={styles.name}>{message.user.name}</Text>}
+                {!isMyMessage && <Text style={styles.name}>{props.userName}</Text>}
                 <Text style={styles.message}>{message.content}</Text>
                 <Text style={styles.time}>{moment(message.createdAt).fromNow()}</Text>
             </View>

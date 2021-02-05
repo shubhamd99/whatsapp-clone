@@ -9,8 +9,9 @@ const styles = StyleSheet.create({
     messageBox: {
         alignSelf: "flex-end", // Take Text Width
         maxWidth: "70%",
-        borderRadius: 5,
-        padding: 10,
+        borderRadius: 8,
+        paddingHorizontal: 10,
+        paddingVertical: 6,
     },
     name: {
         color: Colors.light.tint,
