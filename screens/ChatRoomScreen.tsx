@@ -4,6 +4,8 @@ import { FlatList, ImageBackground, StyleSheet } from "react-native";
 // import { useRoute } from "@react-navigation/native";
 import ChatRoomData from "../data/Chats";
 import ChatMessage from "../components/ChatMessage";
+import InputBox from "../components/InputBox";
+// Image
 const BG = require("../assets/images/BG.png");
 
 const ChatRoomScreen = () => {
@@ -17,6 +19,7 @@ const ChatRoomScreen = () => {
 				renderItem={({ item }) => <ChatMessage message={item} />}
 				inverted // for reversing the array
 			/>
+			<InputBox />
 		</ImageBackground>
 	);
 }
