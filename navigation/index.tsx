@@ -9,7 +9,7 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
 import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
-import ChatRoomScreen from '../screens/ChatRoom';
+import ChatRoomScreen from '../screens/ChatRoomScreen';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 // If you are not familiar with React Navigation, we recommend going through the
@@ -65,8 +65,10 @@ function RootNavigator() {
 							<TouchableWithoutFeedback onPress={() => navigation.goBack()}>
 								<MaterialIcons name="arrow-back" size={22} color={Colors.light.background} />
 							</TouchableWithoutFeedback>
-							<Image source={{ uri: route.params.imageUri }} style={styles.avatar} />
-							<Text style={styles.title}>{route.params.name}</Text>
+							<View style={styles.headerTitleContainer}>
+								<Image source={{ uri: route.params.imageUri }} style={styles.avatar} />
+								<Text style={styles.title}>{route.params.name}</Text>
+							</View>
 						</View>
 					),
 					headerRight : () => (
@@ -94,7 +96,13 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		alignItems: "center",
 		marginLeft: 10,
-		width: 100,
+		width: "80%",
+		justifyContent: "space-between",
+	},
+	headerTitleContainer: {
+		marginLeft: 5,
+		flexDirection: "row",
+		alignItems: "center",
 		justifyContent: "space-between",
 	},
 	avatar: {

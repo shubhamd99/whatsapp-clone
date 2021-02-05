@@ -33,10 +33,18 @@ export type Message = {
   id: string;
   content: string;
   createdAt: string;
+  user: {
+    id: string;
+    name: string;
+  };
 }
 
 export type ChatRoom = {
   id: string;
   users: User[]
-  lastMessage: Message;
+  lastMessage: {
+    id: string;
+    content: string;
+    createdAt: string;
+  };
 }
