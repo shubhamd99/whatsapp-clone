@@ -1,5 +1,10 @@
 export type RootStackParamList = {
   Root: undefined;
+  ChatRoom: {
+    id: string;
+    name: string;
+    imageUri: string;
+  };
   NotFound: undefined;
 };
 
